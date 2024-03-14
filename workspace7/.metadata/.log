@@ -1,0 +1,491 @@
+!SESSION 2024-03-14 11:59:24.387 -----------------------------------------------
+eclipse.buildId=4.21.1.202402070844
+java.version=17.0.10
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_ZA
+Framework arguments:  -product org.springframework.boot.ide.branding.sts4 -product org.springframework.boot.ide.branding.sts4
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.springframework.boot.ide.branding.sts4 -data C:\Users\phill\OneDrive\Desktop\Spring\Spring_Core\workspace7 -product org.springframework.boot.ide.branding.sts4
+
+!ENTRY org.eclipse.emf.ecore 2 0 2024-03-14 11:59:26.815
+!MESSAGE Both 'org.eclipse.jst.j2ee.core' and 'org.eclipse.jst.j2ee.core' register a package for 'application.xmi'
+
+!ENTRY ch.qos.logback.classic 1 0 2024-03-14 11:59:27.118
+!MESSAGE Activated before the state location was initialized. Retry after the state location is initialized.
+
+!ENTRY ch.qos.logback.classic 1 0 2024-03-14 11:59:28.228
+!MESSAGE Logback config file: C:\Users\phill\OneDrive\Desktop\Spring\Spring_Core\workspace7\.metadata\.plugins\org.eclipse.m2e.logback\logback.2.2.1.20231030-1438.xml
+
+!ENTRY org.eclipse.jface 2 0 2024-03-14 11:59:30.206
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2024-03-14 11:59:30.206
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.jdt.ui.navigate.open.type"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.lsp4e.symbolinworkspace"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.egit.ui 2 0 2024-03-14 11:59:33.719
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\phill'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-03-14 12:00:00.974
+!MESSAGE Classpath changed for project: tacocloud
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-03-14 12:00:00.975
+!MESSAGE Classpath changed for project: tacocloud-api
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-03-14 12:00:00.976
+!MESSAGE Classpath changed for project: tacocloud-data
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-03-14 12:00:00.976
+!MESSAGE Classpath changed for project: tacocloud-domain
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-03-14 12:00:00.977
+!MESSAGE Classpath changed for project: tacocloud-restclient
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-03-14 12:00:00.977
+!MESSAGE Classpath changed for project: tacocloud-security
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-03-14 12:00:00.978
+!MESSAGE Classpath changed for project: tacocloud-ui
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-03-14 12:00:00.978
+!MESSAGE Classpath changed for project: tacocloud-web
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-03-14 12:00:13.307
+!MESSAGE Classpath changed for project: tacocloud
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-03-14 12:00:13.308
+!MESSAGE Boot project ADDED: tacocloud
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-03-14 12:00:13.308
+!MESSAGE Starting Boot LS...
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-03-14 12:00:13.333
+!MESSAGE Started Boot LS process
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2024-03-14 12:00:13.372
+!MESSAGE Command list starting LS: org.springframework.tooling.boot.ls
+START:
+C:\Users\phill\OneDrive\Desktop\sts-4.21.1.RELEASE\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.10.v20240120-1143\jre\bin\javaw.exe
+-cp
+C:\Users\phill\OneDrive\Desktop\sts-4.21.1.RELEASE\plugins\org.springframework.tooling.boot.ls_1.52.0.202401312010\servers\spring-boot-language-server\BOOT-INF\classes;C:\Users\phill\OneDrive\Desktop\sts-4.21.1.RELEASE\plugins\org.springframework.tooling.boot.ls_1.52.0.202401312010\servers\spring-boot-language-server\BOOT-INF\lib\*
+-Dsts.lsp.client=eclipse
+-Dlsp.completions.indentation.enable=true
+-Xmx1024m
+-XX:+HeapDumpOnOutOfMemoryError
+-XX:TieredStopAtLevel=1
+-Xlog:jni+resolve=off
+-Dspring.config.location=file:C:\Users\phill\OneDrive\Desktop\sts-4.21.1.RELEASE\plugins\org.springframework.tooling.boot.ls_1.52.0.202401312010\servers\spring-boot-language-server\BOOT-INF\classes\application.properties
+-XX:ErrorFile=C:/Users/phill/OneDrive/Desktop/Spring/Spring_Core/workspace7/.metadata/.plugins/org.springframework.tooling.boot.ls/fatal-error-spring-boot_1710410413371
+org.springframework.ide.vscode.boot.app.BootLanguageServerBootApp
+--languageserver.hover-timeout=225
+END
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-03-14 12:00:13.373
+!MESSAGE DelegatingStreamConnectionProvider - Starting Boot LS
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2024-03-14 12:00:13.418
+!MESSAGE Started org.springframework.tooling.boot.ls LS process 2104
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-03-14 12:00:16.963
+!MESSAGE Classpath changed for project: tacocloud-api
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-03-14 12:00:16.965
+!MESSAGE Boot project ADDED: tacocloud-api
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-03-14 12:00:16.966
+!MESSAGE Classpath changed for project: tacocloud-data
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-03-14 12:00:16.967
+!MESSAGE Boot project ADDED: tacocloud-data
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-03-14 12:00:16.968
+!MESSAGE Classpath changed for project: tacocloud-domain
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-03-14 12:00:16.968
+!MESSAGE Boot project ADDED: tacocloud-domain
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-03-14 12:00:16.970
+!MESSAGE Classpath changed for project: tacocloud-restclient
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-03-14 12:00:16.970
+!MESSAGE Boot project ADDED: tacocloud-restclient
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-03-14 12:00:16.971
+!MESSAGE Classpath changed for project: tacocloud-security
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-03-14 12:00:16.972
+!MESSAGE Boot project ADDED: tacocloud-security
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-03-14 12:00:16.973
+!MESSAGE Classpath changed for project: tacocloud-web
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-03-14 12:00:16.974
+!MESSAGE Boot project ADDED: tacocloud-web
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-03-14 12:00:19.005
+!MESSAGE Classpath changed for project: tacocloud-domain
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-03-14 12:00:19.006
+!MESSAGE Classpath changed for project: tacocloud-restclient
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-03-14 12:00:19.007
+!MESSAGE Classpath changed for project: tacocloud-data
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-03-14 12:00:19.007
+!MESSAGE Classpath changed for project: tacocloud-security
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-03-14 12:00:19.008
+!MESSAGE Classpath changed for project: tacocloud-api
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-03-14 12:00:19.008
+!MESSAGE Classpath changed for project: tacocloud-web
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-03-14 12:00:23.554
+!MESSAGE Classpath changed for project: tacocloud-security
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-03-14 12:00:23.555
+!MESSAGE Classpath changed for project: tacocloud-api
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-03-14 12:00:25.374
+!MESSAGE Classpath changed for project: tacocloud-restclient
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-03-14 12:00:25.374
+!MESSAGE Classpath changed for project: tacocloud
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-03-14 12:00:25.375
+!MESSAGE Classpath changed for project: tacocloud-ui
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-03-14 12:00:26.341
+!MESSAGE Classpath changed for project: tacocloud-web
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-03-14 12:00:36.720
+!MESSAGE Classpath changed for project: tacocloud-api
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-03-14 12:00:36.721
+!MESSAGE Classpath changed for project: tacocloud-data
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-03-14 12:00:36.722
+!MESSAGE Classpath changed for project: tacocloud
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-03-14 12:00:38.377
+!MESSAGE Classpath changed for project: tacocloud-domain
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-03-14 12:00:38.377
+!MESSAGE Classpath changed for project: tacocloud-restclient
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-03-14 12:00:38.378
+!MESSAGE Classpath changed for project: tacocloud-security
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-03-14 12:00:39.999
+!MESSAGE Classpath changed for project: tacocloud-web
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-03-14 12:00:40.000
+!MESSAGE Classpath changed for project: tacocloud-ui
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2024-03-14 12:02:07.675
+!MESSAGE npm ERR! Windows_NT 10.0.22631
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2024-03-14 12:02:07.676
+!MESSAGE npm ERR! argv "C:\\Users\\phill\\OneDrive\\Desktop\\Spring\\Spring_Core Reference Material\\spring-in-action-6-samples-main\\ch07\\tacocloud-ui\\node\\node.exe" "C:\\Users\\phill\\OneDrive\\Desktop\\Spring\\Spring_Core Reference Material\\spring-in-action-6-samples-main\\ch07\\tacocloud-ui\\node\\node_modules\\npm\\bin\\npm-cli.js" "install"
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2024-03-14 12:02:07.676
+!MESSAGE npm ERR! node v6.9.1
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2024-03-14 12:02:07.677
+!MESSAGE npm ERR! npm  v3.10.8
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2024-03-14 12:02:07.677
+!MESSAGE npm ERR! code EPROTO
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2024-03-14 12:02:07.678
+!MESSAGE npm ERR! errno EPROTO
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2024-03-14 12:02:07.678
+!MESSAGE npm ERR! syscall write
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2024-03-14 12:02:07.678
+!MESSAGE 
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2024-03-14 12:02:07.679
+!MESSAGE npm ERR! write EPROTO 101057795:error:1408D07B:SSL routines:ssl3_get_key_exchange:bad signature:openssl\ssl\s3_clnt.c:2010:
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2024-03-14 12:02:07.679
+!MESSAGE npm ERR!
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2024-03-14 12:02:07.680
+!MESSAGE npm ERR!
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2024-03-14 12:02:07.680
+!MESSAGE npm ERR! If you need help, you may report this error at:
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2024-03-14 12:02:07.680
+!MESSAGE npm ERR!     <https://github.com/npm/npm/issues>
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2024-03-14 12:02:07.688
+!MESSAGE 
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2024-03-14 12:02:07.689
+!MESSAGE npm ERR! Please include the following file with any support request:
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2024-03-14 12:02:07.689
+!MESSAGE npm ERR!     C:\Users\phill\OneDrive\Desktop\Spring\Spring_Core Reference Material\spring-in-action-6-samples-main\ch07\tacocloud-ui\npm-debug.log
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2024-03-14 12:02:08.514
+!MESSAGE 'ng' is not recognized as an internal or external command,
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2024-03-14 12:02:08.515
+!MESSAGE operable program or batch file.
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2024-03-14 12:02:08.517
+!MESSAGE 
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2024-03-14 12:02:08.521
+!MESSAGE npm ERR! Windows_NT 10.0.22631
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2024-03-14 12:02:08.522
+!MESSAGE npm ERR! argv "C:\\Users\\phill\\OneDrive\\Desktop\\Spring\\Spring_Core Reference Material\\spring-in-action-6-samples-main\\ch07\\tacocloud-ui\\node\\node.exe" "C:\\Users\\phill\\OneDrive\\Desktop\\Spring\\Spring_Core Reference Material\\spring-in-action-6-samples-main\\ch07\\tacocloud-ui\\node\\node_modules\\npm\\bin\\npm-cli.js" "run-script" "build"
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2024-03-14 12:02:08.522
+!MESSAGE npm ERR! node v6.9.1
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2024-03-14 12:02:08.523
+!MESSAGE npm ERR! npm  v3.10.8
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2024-03-14 12:02:08.523
+!MESSAGE npm ERR! code ELIFECYCLE
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2024-03-14 12:02:08.524
+!MESSAGE npm ERR! taco-web-ui@0.0.0 build: `ng build --dev`
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2024-03-14 12:02:08.524
+!MESSAGE npm ERR! Exit status 1
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2024-03-14 12:02:08.525
+!MESSAGE npm ERR!
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2024-03-14 12:02:08.525
+!MESSAGE npm ERR! Failed at the taco-web-ui@0.0.0 build script 'ng build --dev'.
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2024-03-14 12:02:08.526
+!MESSAGE npm ERR! Make sure you have the latest version of node.js and npm installed.
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2024-03-14 12:02:08.526
+!MESSAGE npm ERR! If you do, this is most likely a problem with the taco-web-ui package,
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2024-03-14 12:02:08.526
+!MESSAGE npm ERR! not with npm itself.
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2024-03-14 12:02:08.527
+!MESSAGE npm ERR! Tell the author that this fails on your system:
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2024-03-14 12:02:08.527
+!MESSAGE npm ERR!     ng build --dev
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2024-03-14 12:02:08.527
+!MESSAGE npm ERR! You can get information on how to open an issue for this project with:
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2024-03-14 12:02:08.527
+!MESSAGE npm ERR!     npm bugs taco-web-ui
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2024-03-14 12:02:08.528
+!MESSAGE npm ERR! Or if that isn't available, you can get their info via:
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2024-03-14 12:02:08.528
+!MESSAGE npm ERR!     npm owner ls taco-web-ui
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2024-03-14 12:02:08.528
+!MESSAGE npm ERR! There is likely additional logging output above.
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2024-03-14 12:02:08.528
+!MESSAGE npm WARN Local package.json exists, but node_modules missing, did you mean to install?
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2024-03-14 12:02:08.530
+!MESSAGE 
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2024-03-14 12:02:08.530
+!MESSAGE npm ERR! Please include the following file with any support request:
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2024-03-14 12:02:08.530
+!MESSAGE npm ERR!     C:\Users\phill\OneDrive\Desktop\Spring\Spring_Core Reference Material\spring-in-action-6-samples-main\ch07\tacocloud-ui\npm-debug.log
+
+!ENTRY org.eclipse.jface 2 0 2024-03-14 12:11:35.486
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2024-03-14 12:11:35.486
+!MESSAGE A conflict occurred for CTRL+SHIFT+C:
+Binding(CTRL+SHIFT+C,
+	ParameterizedCommand(Command(org.eclipse.tm4e.languageconfiguration.toggleLineCommentCommand,Toggle Line Comment,
+		,
+		Category(org.eclipse.tm4e.languageconfiguration.category,TM4E Language Configuration,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.tm4e.languageconfiguration.toggleLineCommentCommand"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+Binding(CTRL+SHIFT+C,
+	ParameterizedCommand(Command(org.springframework.tooling.boot.ls.ToggleComment,Toggle Comment,
+		,
+		Category(org.springframework.ide.eclipse.commands,Spring Generic Text Editor,Spring Language Server Commands,true),
+		WorkbenchHandlerServiceHandler("org.springframework.tooling.boot.ls.ToggleComment"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2024-03-14 12:53:36.211
+!MESSAGE npm ERR! Windows_NT 10.0.22631
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2024-03-14 12:53:36.212
+!MESSAGE npm ERR! argv "C:\\Users\\phill\\OneDrive\\Desktop\\Spring\\Spring_Core Reference Material\\spring-in-action-6-samples-main\\ch07\\tacocloud-ui\\node\\node.exe" "C:\\Users\\phill\\OneDrive\\Desktop\\Spring\\Spring_Core Reference Material\\spring-in-action-6-samples-main\\ch07\\tacocloud-ui\\node\\node_modules\\npm\\bin\\npm-cli.js" "install"
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2024-03-14 12:53:36.213
+!MESSAGE npm ERR! node v6.9.1
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2024-03-14 12:53:36.214
+!MESSAGE npm ERR! npm  v3.10.8
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2024-03-14 12:53:36.214
+!MESSAGE npm ERR! code EPROTO
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2024-03-14 12:53:36.215
+!MESSAGE npm ERR! errno EPROTO
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2024-03-14 12:53:36.215
+!MESSAGE npm ERR! syscall write
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2024-03-14 12:53:36.216
+!MESSAGE 
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2024-03-14 12:53:36.216
+!MESSAGE npm ERR! write EPROTO 101057795:error:1408D07B:SSL routines:ssl3_get_key_exchange:bad signature:openssl\ssl\s3_clnt.c:2010:
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2024-03-14 12:53:36.217
+!MESSAGE npm ERR!
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2024-03-14 12:53:36.217
+!MESSAGE npm ERR!
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2024-03-14 12:53:36.218
+!MESSAGE npm ERR! If you need help, you may report this error at:
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2024-03-14 12:53:36.218
+!MESSAGE npm ERR!     <https://github.com/npm/npm/issues>
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2024-03-14 12:53:36.224
+!MESSAGE 
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2024-03-14 12:53:36.225
+!MESSAGE npm ERR! Please include the following file with any support request:
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2024-03-14 12:53:36.225
+!MESSAGE npm ERR!     C:\Users\phill\OneDrive\Desktop\Spring\Spring_Core Reference Material\spring-in-action-6-samples-main\ch07\tacocloud-ui\npm-debug.log
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2024-03-14 12:53:36.985
+!MESSAGE 'ng' is not recognized as an internal or external command,
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2024-03-14 12:53:36.985
+!MESSAGE operable program or batch file.
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2024-03-14 12:53:36.990
+!MESSAGE 
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2024-03-14 12:53:36.993
+!MESSAGE npm ERR! Windows_NT 10.0.22631
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2024-03-14 12:53:36.994
+!MESSAGE npm ERR! argv "C:\\Users\\phill\\OneDrive\\Desktop\\Spring\\Spring_Core Reference Material\\spring-in-action-6-samples-main\\ch07\\tacocloud-ui\\node\\node.exe" "C:\\Users\\phill\\OneDrive\\Desktop\\Spring\\Spring_Core Reference Material\\spring-in-action-6-samples-main\\ch07\\tacocloud-ui\\node\\node_modules\\npm\\bin\\npm-cli.js" "run-script" "build"
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2024-03-14 12:53:36.995
+!MESSAGE npm ERR! node v6.9.1
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2024-03-14 12:53:36.995
+!MESSAGE npm ERR! npm  v3.10.8
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2024-03-14 12:53:36.996
+!MESSAGE npm ERR! code ELIFECYCLE
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2024-03-14 12:53:36.996
+!MESSAGE npm ERR! taco-web-ui@0.0.0 build: `ng build --dev`
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2024-03-14 12:53:36.997
+!MESSAGE npm ERR! Exit status 1
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2024-03-14 12:53:36.997
+!MESSAGE npm ERR!
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2024-03-14 12:53:36.997
+!MESSAGE npm ERR! Failed at the taco-web-ui@0.0.0 build script 'ng build --dev'.
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2024-03-14 12:53:36.998
+!MESSAGE npm ERR! Make sure you have the latest version of node.js and npm installed.
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2024-03-14 12:53:36.998
+!MESSAGE npm ERR! If you do, this is most likely a problem with the taco-web-ui package,
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2024-03-14 12:53:37.000
+!MESSAGE npm ERR! not with npm itself.
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2024-03-14 12:53:37.000
+!MESSAGE npm ERR! Tell the author that this fails on your system:
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2024-03-14 12:53:37.001
+!MESSAGE npm ERR!     ng build --dev
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2024-03-14 12:53:37.001
+!MESSAGE npm ERR! You can get information on how to open an issue for this project with:
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2024-03-14 12:53:37.001
+!MESSAGE npm ERR!     npm bugs taco-web-ui
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2024-03-14 12:53:37.002
+!MESSAGE npm ERR! Or if that isn't available, you can get their info via:
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2024-03-14 12:53:37.002
+!MESSAGE npm ERR!     npm owner ls taco-web-ui
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2024-03-14 12:53:37.003
+!MESSAGE npm ERR! There is likely additional logging output above.
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2024-03-14 12:53:37.003
+!MESSAGE npm WARN Local package.json exists, but node_modules missing, did you mean to install?
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2024-03-14 12:53:37.004
+!MESSAGE 
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2024-03-14 12:53:37.004
+!MESSAGE npm ERR! Please include the following file with any support request:
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2024-03-14 12:53:37.005
+!MESSAGE npm ERR!     C:\Users\phill\OneDrive\Desktop\Spring\Spring_Core Reference Material\spring-in-action-6-samples-main\ch07\tacocloud-ui\npm-debug.log
+
+!ENTRY org.springframework.ide.eclipse.boot.dash 4 0 2024-03-14 12:54:29.771
+!MESSAGE Failed to connect to Boot app
+!STACK 0
+java.lang.NullPointerException
+	at java.base/java.util.concurrent.CompletableFuture.uniAcceptStage(CompletableFuture.java:732)
+	at java.base/java.util.concurrent.CompletableFuture.thenAccept(CompletableFuture.java:2182)
+	at org.springframework.ide.eclipse.boot.dash.liveprocess.DefaultLiveProcessCommandExecutor.executeCommand(DefaultLiveProcessCommandExecutor.java:60)
+	at org.springframework.ide.eclipse.boot.dash.BootDashActivator$1.stateChanged(BootDashActivator.java:219)
+	at org.springframework.ide.eclipse.boot.dash.BootDashActivator$1.stateChanged(BootDashActivator.java:1)
+	at org.springframework.ide.eclipse.boot.dash.util.RunStateTracker.updateOwnerStatesAndFireEvents(RunStateTracker.java:216)
+	at org.springframework.ide.eclipse.boot.dash.util.RunStateTracker$1.gotValue(RunStateTracker.java:151)
+	at org.springframework.ide.eclipse.boot.dash.util.RunStateTracker$1.gotValue(RunStateTracker.java:1)
+	at org.springsource.ide.eclipse.commons.livexp.core.LiveExpression.changed(LiveExpression.java:137)
+	at org.springsource.ide.eclipse.commons.livexp.core.LiveExpression.refresh(LiveExpression.java:81)
+	at org.springsource.ide.eclipse.commons.livexp.core.LiveVariable.setValue(LiveVariable.java:46)
+	at org.springframework.ide.eclipse.boot.dash.util.AbstractPollingAppReadyStateMonitor$1.run(AbstractPollingAppReadyStateMonitor.java:51)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
