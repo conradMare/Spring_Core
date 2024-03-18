@@ -5,22 +5,20 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
 public class UserDetailsRequestModel {
-
-	@NotNull
-	@Size(min=2, message="First name must not be less than 2 characters")
+	@NotNull(message="First name cannot be null")
+	@Size(min=2, message = "First name must not be less than 2 characters")
 	private String firstName;
-
-	@NotNull
-	@Size(min=2, message="Last name must not be less than 2 characters")
+	
+	@NotNull(message="Last name cannot be null")
+	@Size(min=2, message = "Last name must not be less than 2 characters")
 	private String lastName;
-
-	@NotNull
+	
+	@NotNull(message="Email cannot be null")
 	@Email
 	private String email;
-
-	@NotNull
-	@Size(min=8,max=16, message="Password must be equal or greater than 8 characters and " +
-	"less than 16 characters")
+	
+	@NotNull(message="Password cannot be null")
+	@Size(min=8,max=16, message="Password must be equal or grater than 8 characters and less than 16 chaeracters")
 	private String password;
 
 	public String getFirstName() {
@@ -54,4 +52,5 @@ public class UserDetailsRequestModel {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+
 }
