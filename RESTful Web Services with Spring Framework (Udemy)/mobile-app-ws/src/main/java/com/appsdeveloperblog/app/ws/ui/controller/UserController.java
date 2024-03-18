@@ -17,9 +17,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.appsdeveloperblog.app.ws.exceptions.UserServiceException;
 import com.appsdeveloperblog.app.ws.ui.model.request.UpdateUserDetailsRequestModel;
 import com.appsdeveloperblog.app.ws.ui.model.request.UserDetailsRequestModel;
-import com.appsdeveloperblog.app.ws.ui.model.resopnse.UserRest;
+import com.appsdeveloperblog.app.ws.ui.model.response.UserRest;
+
+import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/users") // http://localhost:8080/users
@@ -46,6 +49,15 @@ public class UserController {
 					})
 	public ResponseEntity<UserRest> getUser(@PathVariable String userId) {
 		
+		// Causing an Exception:
+		// NullPointerException
+		// String firstName = null;
+		//
+		//
+		// int firstNameLength = firstName.length();
+		
+		if(true) throw new UserServiceException("A user service exception is thrown");
+		
 		if(users.containsKey(userId)) {
 			return new ResponseEntity<>(users.get(userId), HttpStatus.OK);
 		} else {
@@ -64,7 +76,7 @@ public class UserController {
 					})
 	
 	// Add @Valid annotation before @RequestBody
-	public ResponseEntity<UserRest> createUser(@RequestBody UserDetailsRequestModel userDetails) {
+	public ResponseEntity<UserRest> createUser(@Valid @RequestBody UserDetailsRequestModel userDetails) {
 		
 		UserRest returnValue = new UserRest();
 		returnValue.setEmail(userDetails.getEmail());
@@ -91,7 +103,7 @@ public class UserController {
 					})
 	
 	// Add @Valid annotation before @RequestBody for validation:
-	public UserRest updateUser(@PathVariable String userId, @RequestBody UpdateUserDetailsRequestModel userDetails) {
+	public UserRest updateUser(@PathVariable String userId, @Valid @RequestBody UpdateUserDetailsRequestModel userDetails) {
 		
 		UserRest storedUserDetails = users.get(userId);
 		

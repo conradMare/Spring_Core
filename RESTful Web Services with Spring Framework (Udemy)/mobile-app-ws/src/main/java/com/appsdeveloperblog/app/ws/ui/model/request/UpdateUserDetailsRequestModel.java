@@ -1,28 +1,31 @@
 package com.appsdeveloperblog.app.ws.ui.model.request;
 
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
+
 public class UpdateUserDetailsRequestModel {
 
-	// @NotNull(message="First name can not be null")
-		// @Size(min=2, message="First name must not be less than 2 characters")
-		private String firstName;
-		
-		// @NotNull(message="Last name can not be null")
-		// @Size(min=2, message="Last name must not be less than 2 characters")
-		private String lastName;
+	@NotNull(message = "First name can not be null")
+	@Size(min = 2, message = "First name must not be less than 2 characters")
+	private String firstName;
 
-		public String getFirstName() {
-			return firstName;
-		}
+	@NotNull(message = "Last name can not be null")
+	@Size(min = 2, message = "Last name must not be less than 2 characters")
+	private String lastName;
 
-		public void setFirstName(String firstName) {
-			this.firstName = firstName;
-		}
+	public String getFirstName() {
+		return firstName;
+	}
 
-		public String getLastName() {
-			return lastName;
-		}
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
 
-		public void setLastName(String lastName) {
-			this.lastName = lastName;
-		}
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
 }
