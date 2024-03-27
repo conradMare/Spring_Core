@@ -1,8 +1,11 @@
 package com.appsdeveloperblog.app.ws.ui.controller;
 
-import java.util.HashMap;
+import java.util.List;
+
 import java.util.Map;
-import java.util.UUID;
+
+
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -18,105 +21,95 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.appsdeveloperblog.app.ws.exceptions.UserServiceException;
 import com.appsdeveloperblog.app.ws.ui.model.request.UpdateUserDetailsRequestModel;
 import com.appsdeveloperblog.app.ws.ui.model.request.UserDetailsRequestModel;
 import com.appsdeveloperblog.app.ws.ui.model.response.UserRest;
 import com.appsdeveloperblog.app.ws.userservice.UserService;
-import com.appsdeveloperblog.app.ws.userservice.impl.UserServiceImpl;
 
 import jakarta.validation.Valid;
 
-@RestController
-@RequestMapping("/users") // http://localhost:8080/users
+
+@RestController //this is a Controller class: handles HTTP request generates responses
+@RequestMapping("/users")  // http://localhost:8080/users : base URL for all end points
 public class UserController {
 
-	// Map creates in-memory information when starting application,
-	// and discards information when restarting application
 	Map<String, UserRest> users;
 	
-	// Auto-wire:
-	@Autowired
-	UserService userService;
+	@Autowired //injecting the UserService into the Controller
+	UserService userService; //dependent on a service called UserService which handles logic
 	
-	@GetMapping
-	public String getUsers(@RequestParam(value="page", defaultValue="1") int page,
+	@GetMapping //Retrieves a list of users: uses pagination(page limit, sort)
+	public ResponseEntity<List<UserRest>> getUsers(@RequestParam(value="page", defaultValue="1") int page,
 			@RequestParam(value="limit", defaultValue="50") int limit,
-			@RequestParam(value="sort", defaultValue="desc", required=false) String sort) {
+			@RequestParam(value="sort", defaultValue = "desc", required = false) String sort)
+	{
+		List<UserRest> allUsers = userService.getAllUsers();
+		if (allUsers.isEmpty()) {
+		return new ResponseEntity<>(HttpStatus.NO_CONTENT);	
+		}
+		else {
+			return new ResponseEntity<>(allUsers, HttpStatus.OK);
+		}
+		}
 		
-//		if(sort == null) sort="desc";
-		return "get user was called with page = " + page + " and limit = " + limit
-				+ " and sort = " + sort;
-	}
 	
-	@GetMapping(path="/{userId}", 
-			produces = {
+	@GetMapping(path="/{userId}", //show user ID
+			produces =  {
 					MediaType.APPLICATION_XML_VALUE,
-					MediaType.APPLICATION_JSON_VALUE 
-					})
-	public ResponseEntity<UserRest> getUser(@PathVariable String userId) {
-		
-		// Causing an Exception:
-		// NullPointerException
-		// String firstName = null;
-		//
-		//
-		// int firstNameLength = firstName.length();
-		
-		if(true) throw new UserServiceException("A user service exception is thrown");
-		
-		if(users.containsKey(userId)) {
-			return new ResponseEntity<>(users.get(userId), HttpStatus.OK);
+					MediaType.APPLICATION_JSON_VALUE
+					} )
+	public ResponseEntity<UserRest> getUser(@PathVariable String userId)
+	{ UserRest user = userService.getUserById(userId);
+		if(user != null)
+		{
+			return new ResponseEntity<>(user, HttpStatus.OK);
 		} else {
-			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
 	}
 	
-	@PostMapping(
-			consumes = {
+	@PostMapping( //create API
+			consumes =  {
+			MediaType.APPLICATION_XML_VALUE,
+			MediaType.APPLICATION_JSON_VALUE
+			},
+			produces =  {
 					MediaType.APPLICATION_XML_VALUE,
-					MediaType.APPLICATION_JSON_VALUE 
-					},
-			produces = {
-					MediaType.APPLICATION_XML_VALUE,
-					MediaType.APPLICATION_JSON_VALUE 
-					})
-	
-	// Add @Valid annotation before @RequestBody
-	public ResponseEntity<UserRest> createUser(@Valid @RequestBody UserDetailsRequestModel userDetails) {
-		
+					MediaType.APPLICATION_JSON_VALUE
+					}  )
+	public ResponseEntity<UserRest> createUser(@Valid @RequestBody UserDetailsRequestModel userDetails)
+	{
+
 		UserRest returnValue = userService.createUser(userDetails);
-		
 		return new ResponseEntity<UserRest>(returnValue, HttpStatus.OK);
 	}
 	
-	@PutMapping(path="/{userId}",
-			consumes = {
-					MediaType.APPLICATION_XML_VALUE,
-					MediaType.APPLICATION_JSON_VALUE 
-					},
-			produces = {
-					MediaType.APPLICATION_XML_VALUE,
-					MediaType.APPLICATION_JSON_VALUE 
-					})
 	
-	// Add @Valid annotation before @RequestBody for validation:
-	public UserRest updateUser(@PathVariable String userId, @Valid @RequestBody UpdateUserDetailsRequestModel userDetails) {
-		
-		UserRest storedUserDetails = users.get(userId);
-		
-		// Update userDetails:
-		storedUserDetails.setFirstName(userDetails.getFirstName());
-		storedUserDetails.setLastName(userDetails.getLastName());
-		
-		users.put(userId, storedUserDetails);
-		
-		return storedUserDetails;
+	@PutMapping(path="/{userId}", consumes =  { //update user
+			MediaType.APPLICATION_XML_VALUE,
+			MediaType.APPLICATION_JSON_VALUE
+			},
+			produces =  {
+					MediaType.APPLICATION_XML_VALUE,
+					MediaType.APPLICATION_JSON_VALUE
+					}  )
+	public ResponseEntity<UserRest> updateUser(@PathVariable String userId, @Valid @RequestBody UpdateUserDetailsRequestModel userDetails)
+	{
+		 UserRest updatedUser = userService.updateUser(userId, userDetails);
+		 
+		 if (updatedUser  != null) {
+			 return new ResponseEntity<>(updatedUser, HttpStatus.OK);
+		    } else {
+		        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+		    }
 	}
 	
+	
 	@DeleteMapping(path="/{id}")
-	public ResponseEntity<Void> deleteUser(@PathVariable String id) {
-		users.remove(id);
+	public ResponseEntity<Void> deleteUser(@PathVariable String id)
+	{
+		userService.deleteUser(id);
+		
 		return ResponseEntity.noContent().build();
 	}
 }

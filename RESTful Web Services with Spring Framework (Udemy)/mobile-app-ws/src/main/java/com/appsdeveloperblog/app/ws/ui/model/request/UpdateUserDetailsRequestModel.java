@@ -28,4 +28,9 @@ public class UpdateUserDetailsRequestModel {
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
+
+	public String getEmail() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
