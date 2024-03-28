@@ -1,5 +1,6 @@
 package com.appsdeveloperblog.app.ws.ui.model.request;
 
+import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
@@ -12,6 +13,10 @@ public class UpdateUserDetailsRequestModel {
 	@NotNull(message = "Last name can not be null")
 	@Size(min = 2, message = "Last name must not be less than 2 characters")
 	private String lastName;
+	
+	@NotNull
+	@Email
+	private String email;
 
 	public String getFirstName() {
 		return firstName;
@@ -30,7 +35,10 @@ public class UpdateUserDetailsRequestModel {
 	}
 
 	public String getEmail() {
-		// TODO Auto-generated method stub
-		return null;
+		return email;
+	}
+	
+	public void setEmail(String email) {
+		this.email = email;
 	}
 }
