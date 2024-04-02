@@ -34,7 +34,7 @@ public class RunnerzApplication {
                     LocalDateTime.now().plus(1, ChronoUnit.HOURS),
                     5,
                     Location.OUTDOOR);
-            log.info("Run" + run);
+            log.info("Run " + run);
         };
     }
 }
