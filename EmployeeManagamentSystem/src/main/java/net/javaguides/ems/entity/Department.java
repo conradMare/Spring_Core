@@ -11,19 +11,16 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "employees")
-public class Employee {
+@Table(name = "departments")
+public class Department {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "first_name")
-    private String firstName;
+    @Column(name = "department_name")
+    private String departmentName;
 
-    @Column(name = "last_name")
-    private String lastName;
-
-    @Column(name = "email_id", nullable = false, unique = true)
-    private String email;
+    @Column(name = "department_description")
+    private String departmentDescription;
 }

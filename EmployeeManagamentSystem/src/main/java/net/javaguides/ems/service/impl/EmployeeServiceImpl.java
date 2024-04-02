@@ -3,27 +3,70 @@ package net.javaguides.ems.service.impl;
 import lombok.AllArgsConstructor;
 import net.javaguides.ems.dto.EmployeeDto;
 import net.javaguides.ems.entity.Employee;
+import net.javaguides.ems.exception.ResourceNotFoundException;
 import net.javaguides.ems.mapper.EmployeeMapper;
 import net.javaguides.ems.repository.EmployeeRepository;
 import net.javaguides.ems.service.EmployeeService;
 import org.springframework.stereotype.Service;
 
-@Service  // Creates Spring Bean
-@AllArgsConstructor // Instead of creating the constructor manually
+import java.util.List;
+import java.util.stream.Collectors;
+
+@Service
+@AllArgsConstructor
 public class EmployeeServiceImpl implements EmployeeService {
 
-    // Inject the dependencies
     private EmployeeRepository employeeRepository;
+
     @Override
     public EmployeeDto createEmployee(EmployeeDto employeeDto) {
 
-        // Create Employee method - stores the Employee into a database
         Employee employee = EmployeeMapper.mapToEmployee(employeeDto);
-        // Save Employee JPA entity in the database
-        Employee savedEmployee = employee.save(employee);
-        // Return Employee entity to client
-        return  EmployeeMapper.mapToEmployeeDto(savedEmployee);
+        Employee savedEmployee = employeeRepository.save(employee);
+        return EmployeeMapper.mapToEmployeeDto(savedEmployee);
+    }
 
-        return null;
+    @Override
+    public EmployeeDto getEmployeeById(Long employeeId) {
+        Employee employee = employeeRepository.findById(employeeId)
+                .orElseThrow(() ->
+                        new ResourceNotFoundException("Employee does not exists with given id : " + employeeId));
+
+        return EmployeeMapper.mapToEmployeeDto(employee);
+    }
+
+    @Override
+    public List<EmployeeDto> getAllEmployees() {
+        List<Employee> employees = employeeRepository.findAll();
+        return employees.stream().map((employee) -> EmployeeMapper.mapToEmployeeDto(employee))
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    public EmployeeDto updateEmployee(Long employeeId, EmployeeDto updatedEmployee) {
+
+        Employee employee = employeeRepository.findById(employeeId).orElseThrow(
+                () -> new ResourceNotFoundException("Employee does not exists with given id: " + employeeId)
+        );
+
+        // Update employee method:
+        employee.setFirstName(updatedEmployee.getFirstName());
+        employee.setLastName(updatedEmployee.getLastName());
+        employee.setEmail(updatedEmployee.getEmail());
+
+        // Save updated method:
+        Employee updatedEmployeeObj = employeeRepository.save(employee);
+
+        return EmployeeMapper.mapToEmployeeDto(updatedEmployeeObj);
+    }
+
+    @Override
+    public void deleteEmployee(Long employeeId) {
+
+        Employee employee = employeeRepository.findById(employeeId).orElseThrow(
+                () -> new ResourceNotFoundException("Employee is not exists with given id: " + employeeId)
+        );
+
+        employeeRepository.deleteById(employeeId);
     }
 }
