@@ -1,37 +1,23 @@
 package dev.danvega.runnerz.run;
 
-import jakarta.annotation.PostConstruct;
-import org.springframework.stereotype.Repository;
-
-import java.time.LocalDateTime;
-import java.time.temporal.ChronoUnit;
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
-@Repository
-public class RunRepository {
+public interface RunRepository {
 
-    private List<Run> runs = new ArrayList<>();
+    List<Run> findAll();
 
-    // Get ALL of the runs:
-    List<Run> findAll() {
-        return runs;
-    }
+    Optional<Run> findById(Integer id);
 
-    @PostConstruct
-    private void init() {
-        runs.add(new Run(1,
-                "Monday Morning Run",
-                LocalDateTime.now(),
-                LocalDateTime.now().plus(30, ChronoUnit.MINUTES),
-                3,
-                Location.INDOOR));
+    void create(Run run);
 
-        runs.add(new Run(2,
-                "Wednesday Evening Run",
-                LocalDateTime.now(),
-                LocalDateTime.now().plus(60, ChronoUnit.MINUTES),
-                6,
-                Location.INDOOR));
-    }
+    void update(Run run, Integer id);
+
+    void delete(Integer id);
+
+    int count();
+
+    void saveAll(List<Run> runs);
+
+    List<Run> findByLocation(String location);
 }
