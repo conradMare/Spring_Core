@@ -15,24 +15,24 @@ import java.time.temporal.ChronoUnit;
 @SpringBootApplication
 public class Application {
 
-	private static final Logger log = LoggerFactory.getLogger(Application.class);
+    private static final Logger log = LoggerFactory.getLogger(Application.class);
 
-	public static void main(String[] args) {
-		SpringApplication.run(Application.class, args);
+    public static void main(String[] args) {
+        SpringApplication.run(Application.class, args);
 
-		@Bean
-		CommandLineRunner runner() {
-			return args -> {
-				Run run = new Run(
-						1,
-						"First Run",
-						LocalDateTime.now(),
-						LocalDateTime.now().plus(1, ChronoUnit.HOURS),
-						5,
-						Location.OUTDOOR);
-				log.info("Run: " + run);
-			};
-		}
-	}
+    }
 
+    @Bean
+    CommandLineRunner runner() {
+        return args -> {
+            Run run = new Run(
+                    1,
+                    "First Run",
+                    LocalDateTime.now(),
+                    LocalDateTime.now().plus(1, ChronoUnit.HOURS),
+                    5,
+                    Location.OUTDOOR);
+            log.info("Run: " + run);
+        };
+    }
 }
