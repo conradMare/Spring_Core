@@ -1,0 +1,6 @@
+package dev.danvega.RunnerzFitnessApplication.run;
+
+import java.util.List;
+
+public record Runs(List<Run> runs) {
+}
