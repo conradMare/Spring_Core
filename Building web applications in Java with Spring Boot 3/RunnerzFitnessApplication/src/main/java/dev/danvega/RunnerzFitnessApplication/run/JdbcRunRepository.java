@@ -8,11 +8,11 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public class JdbcClientRunRepository {
+public class JdbcRunRepository implements RunRepository {
 
     private final JdbcClient jdbcClient;
 
-    public JdbcClientRunRepository(JdbcClient jdbcClient) {
+    public JdbcRunRepository(JdbcClient jdbcClient) {
         this.jdbcClient = jdbcClient;
     }
 
@@ -31,16 +31,16 @@ public class JdbcClientRunRepository {
 
     public void create(Run run) {
         var updated = jdbcClient.sql("INSERT INTO Run(id,title,started_on,completed_on,miles,location) values(?,?,?,?,?,?)")
-                .params(List.of(run.id(),run.title(),run.startedOn(),run.completedOn(),run.miles(),run.location().toString()))
+                .params(List.of(run.id(), run.title(), run.startedOn(), run.completedOn(), run.miles(), run.location().toString()))
                 .update();
 
         Assert.state(updated == 1, "Failed to create run " + run.title());
     }
 
     public void update(Run run, Integer id) {
-        var updated = jdbcClient.sql("update run set title = ?, started_on = ?, completed_on = ?, miles = ?, location = ?, where id = ?")
+        var updated = jdbcClient.sql("update run set title = ?, started_on = ?, completed_on = ?, miles = ?, location = ? where id = ?")
                 .params(List.of(run.title(), run.startedOn(), run.completedOn(), run.miles(), run.location().toString(), id))
-                        .update();
+                .update();
 
         Assert.state(updated == 1, "Failed to update run " + run.title());
     }
@@ -53,7 +53,9 @@ public class JdbcClientRunRepository {
         Assert.state(updated == 1, "Failed to delete run " + id);
     }
 
-    public int count() {return jdbcClient.sql("select * from run").query().listOfRows().size();}
+    public int count() {
+        return jdbcClient.sql("select * from run").query().listOfRows().size();
+    }
 
     public void saveAll(List<Run> runs) {
         runs.stream().forEach(this::create);

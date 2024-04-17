@@ -13,7 +13,7 @@ import java.util.Objects;
 import java.util.Optional;
 
 @Repository
-class InMemoryRunRepository {
+class InMemoryRunRepository implements RunRepository {
 
     private static final Logger log = LoggerFactory.getLogger(InMemoryRunRepository.class);
     private final List<Run> runs = new ArrayList<>();

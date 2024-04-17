@@ -7,7 +7,7 @@ import org.springframework.web.client.RestClient;
 import java.util.List;
 
 @Component
-public class UserRestClient {
+class UserRestClient {
 
     private final RestClient restClient;
 
@@ -17,16 +17,17 @@ public class UserRestClient {
                 .build();
     }
 
-    public List<User> findAll() {
+    List<User> findAll() {
         return restClient.get()
                 .uri("/users")
                 .retrieve()
-                .body(new ParameterizedTypeReference<List<User>>() {});
+                .body(new ParameterizedTypeReference<>() {
+                });
     }
 
-    public User findById(Integer id) {
+    User findById(Integer id) {
         return restClient.get()
-                .uri("uesrs/{id}", id)
+                .uri("/users/{id}", id)
                 .retrieve()
                 .body(User.class);
     }
