@@ -1,22 +1,22 @@
 package dev.farhan.movies;
 
-import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import java.util.List;
 import java.util.Optional;
 
 @Service
 public class MovieService {
 
-    @Autowired // To instantiate the class for us
-    private MovieRepository movieRepository;
+    @Autowired
+    private MovieRepository repository;
 
-    public  List<Movie> allMovies() {
-        return movieRepository.findAll();
+    public List<Movie> findAllMovies() {
+        return repository.findAll();
     }
 
-    public Optional<Movie> singleMovie(String imdbId) {
-        return movieRepository.findMovieByImdbId(imdbId);
+    public Optional<Movie> findMovieByImdbId(String imdbId) {
+        return repository.findMovieByImdbId(imdbId);
     }
 }
