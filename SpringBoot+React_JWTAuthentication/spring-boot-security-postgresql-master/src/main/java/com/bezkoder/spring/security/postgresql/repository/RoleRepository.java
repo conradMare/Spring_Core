@@ -11,4 +11,8 @@ import com.bezkoder.spring.security.postgresql.models.Role;
 @Repository
 public interface RoleRepository extends JpaRepository<Role, Long> {
   Optional<Role> findByName(ERole name);
+
+//  Boolean existsByName(String username);
+//
+//  Boolean existsByEmail(String email);
 }
