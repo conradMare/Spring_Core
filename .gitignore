@@ -1,3 +1,5 @@
 
 Full Stack Development with Java Spring Boot, React, MongoDB - Full Course/movies/src/main/resources/.env
 Docker-Compose-Spring-Boot-Postgres/spring-boot-security-postgresql-master/src/main/resources/application.properties
+Docker-Compose-Spring-Boot-Postgres/spring-boot-security-postgresql-master/docker.env
+Docker-Compose-Spring-Boot-Postgres/spring-boot-security-postgresql-master/docker-compose.yml
